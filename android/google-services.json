@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "367962020656",
+    "firebase_url": "https://truepolitician-d4f4d.firebaseio.com",
+    "project_id": "truepolitician-d4f4d",
+    "storage_bucket": "truepolitician-d4f4d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367962020656:android:ec85e8075cd4af30",
+        "android_client_info": {
+          "package_name": "com.truepolitician.game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "367962020656-q14vv1osn9eggkm3gmcssulapvaqps14.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.truepolitician.game",
+            "certificate_hash": "44d2451f58e4b1d35c296cb11ef91b6f01cfeb0b"
+          }
+        },
+        {
+          "client_id": "367962020656-b7ui562k0n2crn46nnilqudhb6servd6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJA5YyJD01m2Cu5XQB-gk5MIFDnes9l9M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "367962020656-b7ui562k0n2crn46nnilqudhb6servd6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
