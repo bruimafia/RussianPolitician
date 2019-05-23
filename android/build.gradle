@@ -1,6 +1,22 @@
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/'}
+    }
+    dependencies {
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.12.1'
+    }
+}
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
+repositories {
+    maven { url 'https://maven.google.com' }
+}
+
+apply plugin: 'com.google.gms.google-services'
+
 android {
-    buildToolsVersion '27.0.3'
-    compileSdkVersion 26
+    buildToolsVersion '28.0.3'
+    compileSdkVersion 28
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -22,11 +38,15 @@ android {
     }
     defaultConfig {
         applicationId "com.truepolitician.game"
-        minSdkVersion 14
-        targetSdkVersion 26
-        versionCode 2
-        versionName "1.0.1"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 3
+        versionName "1.0.2"
         multiDexEnabled true
+        manifestPlaceholders = [
+                onesignal_app_id: '5fbc0524-c299-42b6-907f-91137fe8d069',
+                onesignal_google_project_number: 'REMOTE'
+        ]
     }
     buildTypes {
         release {
@@ -135,5 +155,8 @@ idea {
     }
 }
 dependencies {
-    implementation 'com.google.android.gms:play-services:12.0.0'
+    implementation 'com.google.firebase:firebase-ads:17.2.0'
+    implementation 'com.onesignal:OneSignal:3.10.8'
+    implementation 'com.yandex.android:mobmetricalib:3.6.0' // Библиотека Appmetrica SDK
+    implementation 'com.android.installreferrer:installreferrer:1.0' // Опционально. Библиотека Play Install Referrer
 }

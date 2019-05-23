@@ -1,5 +1,7 @@
 package com.truepolitician.game;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -13,10 +15,14 @@ import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.onesignal.OneSignal;
+import com.yandex.metrica.YandexMetrica;
+import com.yandex.metrica.YandexMetricaConfig;
 
 public class AndroidLauncher extends AndroidApplication implements IActivityRequestHandler {
 
-	protected AdView adView;
+	private AdView adView;
 
 //	String deviceId = "026D397652285514C25E0D0AC77273A2";
 
@@ -53,8 +59,9 @@ public class AndroidLauncher extends AndroidApplication implements IActivityRequ
 		View gameView = initializeForView(new TruePolitician(), config);
 
 		// представление и настройка AdMob
+		MobileAds.initialize(this, getString(R.string.application_id));
 		adView = new AdView(this);
-		adView.setAdUnitId("ca-app-pub-5561095249269562/7082569595");
+		adView.setAdUnitId(getString(R.string.banner_ad_unit_id));
 		adView.setAdSize(AdSize.SMART_BANNER);
 		AdRequest adRequest = new AdRequest.Builder().build();
 		adView.loadAd(adRequest);
@@ -76,6 +83,21 @@ public class AndroidLauncher extends AndroidApplication implements IActivityRequ
 		try {
 			Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
 		} catch (Exception e) { }
+
+
+		// OneSignal Initialization
+		OneSignal.startInit(this)
+				.inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+				.unsubscribeWhenNotificationsAreDisabled(true)
+				.init();
+		// Создание расширенной конфигурации библиотеки
+		YandexMetricaConfig yaConfig = YandexMetricaConfig.newConfigBuilder(getString(R.string.appMetrica_api_key)).build();
+		// Инициализация AppMetrica SDK
+		YandexMetrica.activate(getApplicationContext(), yaConfig);
+		// Отслеживание активности пользователей
+		YandexMetrica.enableActivityAutoTracking(getApplication());
+
+		new Intent(Intent.ACTION_VIEW, Uri.parse("http://bruimafia.ru/privacy_policy/russianpolitician_privacy_policy.html"));
 	}
 
 	// This is the callback that posts a message for the handler

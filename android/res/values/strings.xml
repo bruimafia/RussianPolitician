@@ -3,4 +3,9 @@
 
     <string name="app_name">Russian Politician</string>
 
+    <!-- ключи -->
+    <string name="appMetrica_api_key">2febd214-5bd7-4d0c-adca-380540eee5c4</string>
+    <string name="application_id">ca-app-pub-5561095249269562~4616188356</string>
+    <string name="banner_ad_unit_id">ca-app-pub-5561095249269562/7082569595</string>
+
 </resources>

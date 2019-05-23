@@ -302,7 +302,7 @@ public class PlayState extends State {
             if (police.collides(hero.getBounds())) {
                 allPause();
                 police.hide();
-                resultBonus = 0;
+                resultBonus = resultBonus / 2;
                 screamPolice.play(0.5f);
             }
         }
@@ -474,7 +474,7 @@ public class PlayState extends State {
 
         text3.setText(font2, "Будьте аккуратны!");
         font2.draw(sb, text3, 1400 - text3.width/2, camera.position.y + 60);
-        text4.setText(font2, "Полицейские отнимают все деньги!");
+        text4.setText(font2, "Полицейские отнимают половину денег!");
         font2.draw(sb, text4, 1400 - text4.width/2, camera.position.y + 40);
 
         font2.draw(sb, "Вы 2-й год у власти", 5000, camera.position.y + 60); // надпись нового уровня

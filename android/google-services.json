@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "367962020656-ad68r00n7ghn14mqrirqj569s0b2ok6i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.truepolitician.game",
+            "certificate_hash": "d798feaf05f15356d5086b3a14556a4541b1b810"
+          }
+        },
+        {
           "client_id": "367962020656-q14vv1osn9eggkm3gmcssulapvaqps14.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -33,20 +41,13 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "367962020656-b7ui562k0n2crn46nnilqudhb6servd6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }
